@@ -2,6 +2,7 @@ package com.moneysupermarket.akka.oajayi.helloworld;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Inbox;
 import com.moneysupermarket.akka.oajayi.helloworld.actor.GreeterActor;
 import com.moneysupermarket.akka.oajayi.helloworld.actor.HelloWorldActor;
 import com.moneysupermarket.akka.oajayi.helloworld.model.MyMessage;
@@ -27,6 +28,10 @@ public class MainApplication {
         helloWorldRef.tell(MyMessage.INFO, ActorRef.noSender());
 
         helloWorldRef.tell(MyMessage.GOODBYE, ActorRef.noSender());
+
+
+
+        System.out.println("Still Here!!!");
 
     }
 }

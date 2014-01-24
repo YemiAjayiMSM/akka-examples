@@ -37,6 +37,8 @@ public class HelloWorldActor extends UntypedActor{
         if (msg == MyMessage.HELLO) {
             logger.info("Sending Hello to Greeter");
             greeterRef.tell(msg, self());
+
+
         } else if(msg == MyMessage.RECEIVED){
 
             logger.info("Response received from Greeter");
@@ -45,7 +47,7 @@ public class HelloWorldActor extends UntypedActor{
 
             //logger.info("Received Message: {}", msg);
             System.out.println("Goodbye!!");
-            getContext().stop(self());
+            getContext().system().shutdown();
 
         } else
             unhandled(msg);
